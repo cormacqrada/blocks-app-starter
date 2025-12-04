@@ -1,0 +1,9 @@
+{
+  "name": "@blocks/config",
+  "version": "0.1.0",
+  "main": "eslint/index.cjs",
+  "scripts": {
+    "build": "echo 'config only'",
+    "test": "echo 'no tests yet'"
+  }
+}

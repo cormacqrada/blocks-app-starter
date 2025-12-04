@@ -1,0 +1,33 @@
+{
+  "name": "blocks-app-starter",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Starter for repos for  apps in the blocks ecosystem.",
+  "packageManager": "pnpm@9.0.0",
+  "workspaces": ["packages/*", "examples/*"],
+  "scripts": {
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
+    "schema:validate": "node ./schema/validators/validate-schemas.cjs",
+    "prepare": "husky install",
+    "lint:commits": "commitlint --from=HEAD~10 --to=HEAD",
+    "watch:markdown": "node ./scripts/watch-markdown.cjs"
+  },
+  "devDependencies": {
+    "turbo": "^2.0.0",
+    "typescript": "^5.6.0",
+    "@changesets/cli": "^2.27.1",
+    "ajv": "^8.17.0",
+    "@commitlint/cli": "^19.0.0",
+    "@commitlint/config-conventional": "^19.0.0",
+    "husky": "^9.0.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "@blocks/core": "file:packages/core",
+      "@blocks/runtime": "file:packages/runtime",
+      "@blocks/renderer": "file:packages/renderer"
+    }
+  }
+}

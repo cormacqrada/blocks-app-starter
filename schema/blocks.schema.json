@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://blocks.dev/schema/blocks.schema.json",
+  "title": "Block",
+  "description": "Core schema for Blocks Project block structure and behavior.",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "type": { "type": "string", "enum": ["data", "logic", "visual"] },
+    "version": { "type": "string" },
+    "properties": { "type": "object", "additionalProperties": true },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" }
+        },
+        "required": ["id"],
+        "additionalProperties": false
+      }
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" }
+        },
+        "required": ["id"],
+        "additionalProperties": false
+      }
+    },
+    "schema": { "type": "string", "const": "blocks.schema.json" }
+  },
+  "required": ["id", "type", "version", "properties", "inputs", "outputs", "schema"],
+  "additionalProperties": false
+}

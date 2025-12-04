@@ -1,0 +1,19 @@
+{
+  "name": "canvas-node-app",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@blocks/core": "file:../../packages/core",
+    "@blocks/runtime": "file:../../packages/runtime",
+    "@blocks/renderer": "file:../../packages/renderer"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "vite": "^5.0.0"
+  }
+}

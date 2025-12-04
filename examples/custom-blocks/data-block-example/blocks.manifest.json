@@ -1,0 +1,22 @@
+{
+  "$schema": "../../schema/manifest.schema.json",
+  "name": "data-block-example",
+  "version": "0.1.0",
+  "description": "Example showing a data block.",
+  "blocks": [
+    {
+      "id": "fetch-users",
+      "type": "data",
+      "version": "1.0.0",
+      "properties": {
+        "label": "Fetch Users",
+        "method": "GET",
+        "url": "https://api.example.com/users"
+      },
+      "inputs": [],
+      "outputs": [],
+      "schema": "blocks.schema.json"
+    }
+  ],
+  "collections": []
+}

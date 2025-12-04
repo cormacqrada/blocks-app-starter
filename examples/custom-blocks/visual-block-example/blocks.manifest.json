@@ -1,0 +1,22 @@
+{
+  "$schema": "../../schema/manifest.schema.json",
+  "name": "visual-block-example",
+  "version": "0.1.0",
+  "description": "Example showing a visual block.",
+  "blocks": [
+    {
+      "id": "table-view",
+      "type": "visual",
+      "version": "1.0.0",
+      "properties": {
+        "label": "User Table",
+        "component": "Table",
+        "source": "users"
+      },
+      "inputs": [],
+      "outputs": [],
+      "schema": "blocks.schema.json"
+    }
+  ],
+  "collections": []
+}

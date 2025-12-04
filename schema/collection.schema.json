@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://blocks.dev/schema/collection.schema.json",
+  "title": "Collection",
+  "description": "Collection of items providing context for block operations.",
+  "type": "object",
+  "properties": {
+    "name": { "type": "string" },
+    "items": { "type": "array", "items": {} },
+    "relationships": { "type": "object", "additionalProperties": {} },
+    "version": { "type": "string" },
+    "schema": { "type": "string", "const": "collection.schema.json" }
+  },
+  "required": ["name", "items", "relationships", "version", "schema"],
+  "additionalProperties": false
+}

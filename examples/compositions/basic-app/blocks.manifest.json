@@ -1,0 +1,8 @@
+{
+  "$schema": "../../schema/manifest.schema.json",
+  "name": "basic-app",
+  "version": "0.1.0",
+  "description": "Minimal working example app.",
+  "blocks": [],
+  "collections": []
+}

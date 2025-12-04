@@ -1,0 +1,43 @@
+{
+  "$schema": "../../schema/manifest.schema.json",
+  "name": "full-stack-example",
+  "version": "0.1.0",
+  "description": "Example composing data, logic, and visual blocks.",
+  "blocks": [
+    {
+      "id": "fetch-metrics",
+      "type": "data",
+      "version": "1.0.0",
+      "properties": {
+        "label": "Fetch Metrics"
+      },
+      "inputs": [],
+      "outputs": [{ "id": "compute-forecast" }],
+      "schema": "blocks.schema.json"
+    },
+    {
+      "id": "compute-forecast",
+      "type": "logic",
+      "version": "1.0.0",
+      "properties": {
+        "label": "Forecast"
+      },
+      "inputs": [{ "id": "fetch-metrics" }],
+      "outputs": [{ "id": "metrics-chart" }],
+      "schema": "blocks.schema.json"
+    },
+    {
+      "id": "metrics-chart",
+      "type": "visual",
+      "version": "1.0.0",
+      "properties": {
+        "label": "Metrics Chart",
+        "component": "LineChart"
+      },
+      "inputs": [{ "id": "compute-forecast" }],
+      "outputs": [],
+      "schema": "blocks.schema.json"
+    }
+  ],
+  "collections": []
+}

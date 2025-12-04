@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://blocks.dev/schema/manifest.schema.json",
+  "title": "Blocks Manifest",
+  "description": "Manifest describing a Blocks-aware app or template.",
+  "type": "object",
+  "properties": {
+    "name": { "type": "string" },
+    "version": { "type": "string" },
+    "description": { "type": "string" },
+    "blocks": {
+      "type": "array",
+      "items": { "$ref": "./blocks.schema.json" }
+    },
+    "collections": {
+      "type": "array",
+      "items": { "$ref": "./collection.schema.json" }
+    }
+  },
+  "required": ["name", "version"],
+  "additionalProperties": true
+}

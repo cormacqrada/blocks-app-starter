@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Blocks Design System Playground</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      :root {
+        color-scheme: dark;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+        background: radial-gradient(circle at top left, #020617, #020617 45%, #000 100%);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      }
+      main.playground-layout {
+        flex: 1;
+        max-width: 1200px;
+        padding: 1.5rem;
+        display: grid;
+        grid-template-columns: 260px minmax(0, 1fr);
+        grid-template-rows: minmax(0, 1fr);
+        gap: 1rem;
+      }
+      aside.sidebar {
+        border-radius: 0.9rem;
+        border: 1px solid rgba(148, 163, 184, 0.4);
+        background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.98));
+        box-shadow: 0 16px 40px rgba(15, 23, 42, 0.85);
+        padding: 0.9rem 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+      aside.sidebar h2 {
+        margin: 0 0 0.4rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #e5e7eb;
+      }
+      #theme-toggle {
+        display: flex;
+        gap: 0.5rem;
+      }
+      #theme-toggle button {
+        flex: 1;
+        border-radius: 0.5rem;
+        border: 1px solid rgba(55, 65, 81, 0.9);
+        background: rgba(15, 23, 42, 0.95);
+        color: #e5e7eb;
+        font-size: 0.8rem;
+        padding: 0.35rem 0.5rem;
+        cursor: pointer;
+      }
+      #theme-toggle button[data-active="true"] {
+        border-color: rgba(129, 140, 248, 0.9);
+        background: rgba(30, 64, 175, 0.85);
+      }
+      section.preview-shell {
+        border-radius: 0.9rem;
+        border: 1px solid rgba(148, 163, 184, 0.4);
+        background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.98));
+        box-shadow: 0 18px 44px rgba(15, 23, 42, 0.9);
+        padding: 1rem 1.2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      section.preview-shell h1 {
+        margin: 0;
+        font-size: 1.1rem;
+        letter-spacing: -0.02em;
+        color: #e5e7eb;
+      }
+      .preview-inner {
+        margin-top: 0.2rem;
+      }
+    </style>
+    <script type="module" crossorigin src="/assets/index-DBbcqLm7.js"></script>
+  </head>
+  <body>
+    <main class="playground-layout">
+      <aside class="sidebar">
+        <h2>Theme</h2>
+        <div id="theme-toggle">
+          <button type="button" data-theme="dark" data-active="true">Dark</button>
+          <button type="button" data-theme="light" data-active="false">Light</button>
+        </div>
+      </aside>
+      <section class="preview-shell">
+        <h1>Design System Preview</h1>
+        <div class="preview-inner">
+          <blocks-renderer id="ds-preview"></blocks-renderer>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

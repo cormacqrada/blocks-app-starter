@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://blocks.dev/schema/block-registry.schema.json",
+  "title": "Block Registry",
+  "description": "Registry manifest for reusable custom blocks.",
+  "type": "object",
+  "properties": {
+    "name": { "type": "string" },
+    "version": { "type": "string" },
+    "description": { "type": "string" },
+    "blocks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "type": { "type": "string", "enum": ["data", "logic", "visual"] },
+          "version": { "type": "string" },
+          "schema": { "type": "string", "const": "blocks.schema.json" },
+          "source": { "type": "string", "description": "Package or URL where this block implementation lives." }
+        },
+        "required": ["id", "type", "version", "schema", "source"],
+        "additionalProperties": true
+      }
+    }
+  },
+  "required": ["name", "version", "blocks"],
+  "additionalProperties": false
+}

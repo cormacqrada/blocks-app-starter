@@ -1,0 +1,13 @@
+{
+  "name": "blocks-frontend-web-template",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "echo 'wire up dev server here'"
+  },
+  "dependencies": {
+    "@blocks/core": "^0.1.0",
+    "@blocks/runtime": "^0.1.0",
+    "@capacitor/core": "^6.0.0"
+  }
+}

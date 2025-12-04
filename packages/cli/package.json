@@ -1,0 +1,17 @@
+{
+  "name": "@blocks/cli",
+  "version": "0.1.0",
+  "bin": {
+    "blocks-app": "dist/index.cjs"
+  },
+  "main": "dist/index.cjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "echo 'no tests yet'",
+    "lint": "echo 'no lint yet'"
+  },
+  "dependencies": {
+    "commander": "^12.0.0"
+  }
+}

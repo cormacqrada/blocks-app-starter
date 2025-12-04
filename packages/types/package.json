@@ -1,0 +1,10 @@
+{
+  "name": "@blocks/types",
+  "version": "0.1.0",
+  "types": "./blocks.d.ts",
+  "scripts": {
+    "build": "echo 'types only'",
+    "test": "echo 'no tests yet'",
+    "lint": "echo 'no lint yet'"
+  }
+}

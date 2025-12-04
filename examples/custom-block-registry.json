@@ -1,0 +1,15 @@
+{
+  "$schema": "../schema/block-registry.schema.json",
+  "name": "blocks-custom-registry",
+  "version": "0.1.0",
+  "description": "Example registry of custom Blocks.",
+  "blocks": [
+    {
+      "id": "marketing-api",
+      "type": "data",
+      "version": "1.0.0",
+      "schema": "blocks.schema.json",
+      "source": "@org/blocks-marketing-api"
+    }
+  ]
+}

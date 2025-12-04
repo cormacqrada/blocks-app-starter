@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Blocks Editor Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      :root {
+        color-scheme: dark;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+        background: radial-gradient(circle at top left, #020617, #020617 45%, #000 100%);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      }
+      main.editor-layout {
+        flex: 1;
+        max-width: 1280px;
+        padding: 1.5rem;
+        display: grid;
+        grid-template-columns: 220px minmax(0, 1fr) 260px;
+        grid-template-rows: minmax(0, 1fr);
+        gap: 1rem;
+      }
+      aside.sidebar {
+        border-radius: 0.9rem;
+        border: 1px solid rgba(148, 163, 184, 0.4);
+        background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.98));
+        box-shadow: 0 16px 40px rgba(15, 23, 42, 0.85);
+        padding: 0.8rem 0.9rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+      }
+      aside.sidebar h2 {
+        margin: 0 0 0.4rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #e5e7eb;
+      }
+      section.document-section {
+        border-radius: 0.9rem;
+        border: 1px solid rgba(148, 163, 184, 0.4);
+        background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.98));
+        box-shadow: 0 18px 44px rgba(15, 23, 42, 0.9);
+        padding: 0.9rem 1rem;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+      }
+      #doc-editor {
+        flex: 1;
+        overflow: auto;
+        padding: 0.4rem 0.2rem;
+      }
+      .doc-block-wrapper {
+        padding: 0.35rem 0.4rem;
+        border-radius: 0.45rem;
+        border: 1px solid transparent;
+        margin-bottom: 0.2rem;
+        cursor: text;
+      }
+      .doc-block-wrapper.selected {
+        border-color: rgba(129, 140, 248, 0.9);
+        background: rgba(15, 23, 42, 0.95);
+      }
+.doc-block-content {
+        font-size: 0.9rem;
+        color: #e5e7eb;
+      }
+      .doc-block-editable {
+        outline: none;
+        white-space: pre-wrap;
+        min-height: 1.1rem;
+        white-space: pre-wrap;
+      }
+      .block-picker-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+      .block-picker-item {
+        padding: 0.3rem 0.4rem;
+        border-radius: 0.4rem;
+        border: 1px solid rgba(31, 41, 55, 0.9);
+        background: rgba(15, 23, 42, 0.95);
+        color: #e5e7eb;
+        font-size: 0.78rem;
+        text-align: left;
+        cursor: pointer;
+      }
+      .block-picker-item:hover {
+        border-color: rgba(129, 140, 248, 0.9);
+      }
+      #cmd-menu-root {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+      .cmd-menu {
+        position: absolute;
+        left: 1.5rem;
+        top: 2rem;
+        width: 260px;
+        background: rgba(15, 23, 42, 0.98);
+        border-radius: 0.6rem;
+        border: 1px solid rgba(55, 65, 81, 0.9);
+        box-shadow: 0 18px 44px rgba(15, 23, 42, 0.95);
+        padding: 0.35rem 0.4rem 0.45rem;
+        pointer-events: auto;
+      }
+      .cmd-menu-search {
+        width: 100%;
+        padding: 0.25rem 0.35rem;
+        border-radius: 0.3rem;
+        border: 1px solid rgba(55, 65, 81, 0.9);
+        background: rgba(15, 23, 42, 0.95);
+        color: #e5e7eb;
+        font-size: 0.8rem;
+      }
+      .cmd-menu-list {
+        margin-top: 0.35rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+        max-height: 180px;
+        overflow: auto;
+      }
+      .cmd-menu-item {
+        padding: 0.25rem 0.35rem;
+        border-radius: 0.35rem;
+        border: 1px solid transparent;
+        background: transparent;
+        color: #e5e7eb;
+        font-size: 0.78rem;
+        text-align: left;
+        cursor: pointer;
+      }
+      .cmd-menu-item:hover {
+        background: rgba(31, 41, 55, 0.9);
+        border-color: rgba(55, 65, 81, 0.9);
+      }
+      .prop-field {
+        display: flex;
+        flex-direction: column;
+        gap: 0.15rem;
+        margin-bottom: 0.35rem;
+      }
+      .prop-field label {
+        font-size: 0.75rem;
+        color: #9ca3af;
+      }
+      .prop-field input,
+      .prop-field select {
+        padding: 0.25rem 0.3rem;
+        border-radius: 0.3rem;
+        border: 1px solid rgba(55, 65, 81, 0.9);
+        background: rgba(15, 23, 42, 0.95);
+        color: #e5e7eb;
+        font-size: 0.8rem;
+      }
+    </style>
+    <script type="module" crossorigin src="/assets/index-D12LFLZw.js"></script>
+  </head>
+  <body>
+    <main class="editor-layout">
+      <aside class="sidebar">
+        <h2>Blocks</h2>
+        <div id="block-picker-panel"></div>
+      </aside>
+      <section class="document-section">
+        <div id="doc-editor"></div>
+        <div id="cmd-menu-root"></div>
+      </section>
+      <aside class="sidebar">
+        <h2>Properties</h2>
+        <div id="properties-panel"></div>
+      </aside>
+    </main>
+  </body>
+</html>
