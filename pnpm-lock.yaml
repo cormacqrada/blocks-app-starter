@@ -38,13 +38,13 @@ importers:
   examples/canvas-layout:
     dependencies:
       '@blocks/core':
-        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/core
+        specifier: workspace:*
         version: link:../../packages/core
       '@blocks/renderer':
-        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/renderer
+        specifier: workspace:*
         version: link:../../packages/renderer
       '@blocks/runtime':
-        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/runtime
+        specifier: workspace:*
         version: link:../../packages/runtime
     devDependencies:
       typescript:
@@ -57,13 +57,13 @@ importers:
   examples/collaborative-blocks-app:
     dependencies:
       '@blocks/core':
-        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/core
+        specifier: workspace:*
         version: link:../../packages/core
       '@blocks/renderer':
-        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/renderer
+        specifier: workspace:*
         version: link:../../packages/renderer
       '@blocks/runtime':
-        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/runtime
+        specifier: workspace:*
         version: link:../../packages/runtime
     devDependencies:
       typescript:
@@ -76,13 +76,13 @@ importers:
   examples/dashboard-layout:
     dependencies:
       '@blocks/core':
-        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/core
+        specifier: workspace:*
         version: link:../../packages/core
       '@blocks/renderer':
-        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/renderer
+        specifier: workspace:*
         version: link:../../packages/renderer
       '@blocks/runtime':
-        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/runtime
+        specifier: workspace:*
         version: link:../../packages/runtime
     devDependencies:
       typescript:
@@ -95,13 +95,13 @@ importers:
   examples/filesystem-markdown-watcher:
     dependencies:
       '@blocks/core':
-        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/core
+        specifier: workspace:*
         version: link:../../packages/core
       '@blocks/renderer':
-        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/renderer
+        specifier: workspace:*
         version: link:../../packages/renderer
       '@blocks/runtime':
-        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/runtime
+        specifier: workspace:*
         version: link:../../packages/runtime
     devDependencies:
       typescript:
@@ -117,13 +117,13 @@ importers:
   examples/live-edit-blocks-dag:
     dependencies:
       '@blocks/core':
-        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/core
+        specifier: workspace:*
         version: link:../../packages/core
       '@blocks/renderer':
-        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/renderer
+        specifier: workspace:*
         version: link:../../packages/renderer
       '@blocks/runtime':
-        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/runtime
+        specifier: workspace:*
         version: link:../../packages/runtime
     devDependencies:
       typescript:
@@ -136,13 +136,13 @@ importers:
   examples/live-edit-blocks-design-tokens:
     dependencies:
       '@blocks/core':
-        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/core
+        specifier: workspace:*
         version: link:../../packages/core
       '@blocks/renderer':
-        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/renderer
+        specifier: workspace:*
         version: link:../../packages/renderer
       '@blocks/runtime':
-        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/runtime
+        specifier: workspace:*
         version: link:../../packages/runtime
     devDependencies:
       typescript:
@@ -155,10 +155,10 @@ importers:
   examples/live-edit-blocks-inline:
     dependencies:
       '@blocks/core':
-        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/core
+        specifier: workspace:*
         version: link:../../packages/core
       '@blocks/runtime':
-        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/runtime
+        specifier: workspace:*
         version: link:../../packages/runtime
     devDependencies:
       typescript:
@@ -171,13 +171,13 @@ importers:
   examples/markdown-to-blocktree:
     dependencies:
       '@blocks/core':
-        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/core
+        specifier: workspace:*
         version: link:../../packages/core
       '@blocks/renderer':
-        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/renderer
+        specifier: workspace:*
         version: link:../../packages/renderer
       '@blocks/runtime':
-        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/runtime
+        specifier: workspace:*
         version: link:../../packages/runtime
     devDependencies:
       typescript:
@@ -200,10 +200,10 @@ importers:
   packages/renderer:
     dependencies:
       '@blocks/core':
-        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/core
+        specifier: workspace:*
         version: link:../core
       '@blocks/runtime':
-        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/runtime
+        specifier: workspace:*
         version: link:../runtime
       marked:
         specifier: ^12.0.0
@@ -212,7 +212,7 @@ importers:
   packages/runtime:
     dependencies:
       '@blocks/core':
-        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/core
+        specifier: workspace:*
         version: link:../core
 
   packages/types: {}
