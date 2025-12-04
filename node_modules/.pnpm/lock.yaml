@@ -35,23 +35,7 @@ importers:
         specifier: ^5.6.0
         version: 5.9.3
 
-  examples/block-editor-app:
-    dependencies:
-      '@blocks/core':
-        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/core
-        version: link:../../packages/core
-      '@blocks/runtime':
-        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/runtime
-        version: link:../../packages/runtime
-    devDependencies:
-      typescript:
-        specifier: ^5.4.0
-        version: 5.9.3
-      vite:
-        specifier: ^5.0.0
-        version: 5.4.21(@types/node@24.10.1)
-
-  examples/canvas-node-app:
+  examples/canvas-layout:
     dependencies:
       '@blocks/core':
         specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/core
@@ -70,7 +54,7 @@ importers:
         specifier: ^5.0.0
         version: 5.4.21(@types/node@24.10.1)
 
-  examples/canvas-node-live-app:
+  examples/collaborative-blocks-app:
     dependencies:
       '@blocks/core':
         specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/core
@@ -81,50 +65,6 @@ importers:
       '@blocks/runtime':
         specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/runtime
         version: link:../../packages/runtime
-    devDependencies:
-      typescript:
-        specifier: ^5.4.0
-        version: 5.9.3
-      vite:
-        specifier: ^5.0.0
-        version: 5.4.21(@types/node@24.10.1)
-
-  examples/dashboard-page-app:
-    dependencies:
-      '@blocks/core':
-        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/core
-        version: link:../../packages/core
-      '@blocks/renderer':
-        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/renderer
-        version: link:../../packages/renderer
-    devDependencies:
-      typescript:
-        specifier: ^5.4.0
-        version: 5.9.3
-      vite:
-        specifier: ^5.0.0
-        version: 5.4.21(@types/node@24.10.1)
-
-  examples/design-system-playground-app:
-    dependencies:
-      '@blocks/core':
-        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/core
-        version: link:../../packages/core
-      '@blocks/renderer':
-        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/renderer
-        version: link:../../packages/renderer
-      '@blocks/runtime':
-        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/runtime
-        version: link:../../packages/runtime
-    devDependencies:
-      typescript:
-        specifier: ^5.0.0
-        version: 5.9.3
-      vite:
-        specifier: ^5.0.0
-        version: 5.4.21(@types/node@24.10.1)
-
-  examples/web-blocks-app:
     devDependencies:
       typescript:
         specifier: ^5.6.0
@@ -133,8 +73,106 @@ importers:
         specifier: ^5.0.0
         version: 5.4.21(@types/node@24.10.1)
 
-  examples/web-blocks-realtime-app:
+  examples/dashboard-layout:
     dependencies:
+      '@blocks/core':
+        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/core
+        version: link:../../packages/core
+      '@blocks/renderer':
+        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/renderer
+        version: link:../../packages/renderer
+      '@blocks/runtime':
+        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/runtime
+        version: link:../../packages/runtime
+    devDependencies:
+      typescript:
+        specifier: ^5.4.0
+        version: 5.9.3
+      vite:
+        specifier: ^5.0.0
+        version: 5.4.21(@types/node@24.10.1)
+
+  examples/filesystem-markdown-watcher:
+    dependencies:
+      '@blocks/core':
+        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/core
+        version: link:../../packages/core
+      '@blocks/renderer':
+        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/renderer
+        version: link:../../packages/renderer
+      '@blocks/runtime':
+        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/runtime
+        version: link:../../packages/runtime
+    devDependencies:
+      typescript:
+        specifier: ^5.6.0
+        version: 5.9.3
+      vite:
+        specifier: ^5.0.0
+        version: 5.4.21(@types/node@24.10.1)
+      ws:
+        specifier: ^8.18.0
+        version: 8.18.3
+
+  examples/live-edit-blocks-dag:
+    dependencies:
+      '@blocks/core':
+        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/core
+        version: link:../../packages/core
+      '@blocks/renderer':
+        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/renderer
+        version: link:../../packages/renderer
+      '@blocks/runtime':
+        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/runtime
+        version: link:../../packages/runtime
+    devDependencies:
+      typescript:
+        specifier: ^5.4.0
+        version: 5.9.3
+      vite:
+        specifier: ^5.0.0
+        version: 5.4.21(@types/node@24.10.1)
+
+  examples/live-edit-blocks-design-tokens:
+    dependencies:
+      '@blocks/core':
+        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/core
+        version: link:../../packages/core
+      '@blocks/renderer':
+        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/renderer
+        version: link:../../packages/renderer
+      '@blocks/runtime':
+        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/runtime
+        version: link:../../packages/runtime
+    devDependencies:
+      typescript:
+        specifier: ^5.0.0
+        version: 5.9.3
+      vite:
+        specifier: ^5.0.0
+        version: 5.4.21(@types/node@24.10.1)
+
+  examples/live-edit-blocks-inline:
+    dependencies:
+      '@blocks/core':
+        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/core
+        version: link:../../packages/core
+      '@blocks/runtime':
+        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/runtime
+        version: link:../../packages/runtime
+    devDependencies:
+      typescript:
+        specifier: ^5.4.0
+        version: 5.9.3
+      vite:
+        specifier: ^5.0.0
+        version: 5.4.21(@types/node@24.10.1)
+
+  examples/markdown-to-blocktree:
+    dependencies:
+      '@blocks/core':
+        specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/core
+        version: link:../../packages/core
       '@blocks/renderer':
         specifier: file:/Users/cormac/Workspace/Projects/blocks-app-starter/packages/renderer
         version: link:../../packages/renderer
@@ -1256,6 +1294,18 @@ packages:
     resolution: {integrity: sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==}
     engines: {node: '>=10'}
 
+  ws@8.18.3:
+    resolution: {integrity: sha512-PEIGCY5tSlUt50cqyMXfCzX+oOPqN0vuGqWzbcJ2xvnkzkq46oOpz7dQaTDBdfICb4N14+GARUDw2XV2N4tvzg==}
+    engines: {node: '>=10.0.0'}
+    peerDependencies:
+      bufferutil: ^4.0.1
+      utf-8-validate: '>=5.0.2'
+    peerDependenciesMeta:
+      bufferutil:
+        optional: true
+      utf-8-validate:
+        optional: true
+
   y18n@5.0.8:
     resolution: {integrity: sha512-0pfFzegeDWJHJIAmTLRP2DwHjdF5s7jo9tuztdQxAhINCdvS+3nGINqPd00AphqJR/0LhANUS6/+7SCb98YOfA==}
     engines: {node: '>=10'}
@@ -2283,6 +2333,8 @@ snapshots:
       ansi-styles: 4.3.0
       string-width: 4.2.3
       strip-ansi: 6.0.1
+
+  ws@8.18.3: {}
 
   y18n@5.0.8: {}
 
