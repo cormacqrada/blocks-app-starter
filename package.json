@@ -25,9 +25,9 @@
   },
   "pnpm": {
     "overrides": {
-      "@blocks/core": "file:packages/core",
-      "@blocks/runtime": "file:packages/runtime",
-      "@blocks/renderer": "file:packages/renderer"
+      "@blocks/core": "workspace:*",
+      "@blocks/runtime": "workspace:*",
+      "@blocks/renderer": "workspace:*"
     }
   }
 }
