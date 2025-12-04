@@ -10,6 +10,6 @@
     "lint": "echo 'no lint yet'"
   },
   "dependencies": {
-    "@blocks/core": "file:../core"
+    "@blocks/core": "workspace:*"
   }
 }

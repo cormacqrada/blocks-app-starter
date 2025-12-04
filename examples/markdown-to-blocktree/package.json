@@ -7,7 +7,11 @@
     "build": "vite build",
     "preview": "vite preview"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@blocks/core": "workspace:*",
+    "@blocks/runtime": "workspace:*",
+    "@blocks/renderer": "workspace:*"
+  },
   "devDependencies": {
     "vite": "^5.0.0",
     "typescript": "^5.6.0"

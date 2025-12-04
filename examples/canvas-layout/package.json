@@ -8,10 +8,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@blocks/core": "file:../../packages/core",
-    "@blocks/runtime": "file:../../packages/runtime",
-    "@blocks/renderer": "file:../../packages/renderer"
-  },
+  "@blocks/core": "workspace:*",
+  "@blocks/runtime": "workspace:*",
+  "@blocks/renderer": "workspace:*"
+},
   "devDependencies": {
     "typescript": "^5.4.0",
     "vite": "^5.0.0"

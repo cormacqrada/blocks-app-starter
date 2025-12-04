@@ -11,8 +11,9 @@
     "vite": "^5.0.0",
     "typescript": "^5.6.0"
   },
-  "dependencies": {
-    "@blocks/renderer": "file:../../packages/renderer",
-    "@blocks/runtime": "file:../../packages/runtime"
-  }
+ "dependencies": {
+  "@blocks/core": "workspace:*",
+  "@blocks/runtime": "workspace:*",
+  "@blocks/renderer": "workspace:*"
+}
 }

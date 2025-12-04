@@ -7,10 +7,11 @@
     "dev": "node src/server.mjs",
     "watch": "node src/server.mjs"
   },
-  "dependencies": {
-    "@blocks/renderer": "file:../../packages/renderer",
-    "@blocks/runtime": "file:../../packages/runtime"
-  },
+ "dependencies": {
+  "@blocks/core": "workspace:*",
+  "@blocks/runtime": "workspace:*",
+  "@blocks/renderer": "workspace:*"
+},
   "devDependencies": {
     "vite": "^5.0.0",
     "typescript": "^5.6.0",
