@@ -1,6 +1,6 @@
 {
   "name": "block-editor-app",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
     "dev": "vite",
@@ -8,8 +8,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-  "@blocks/core": "workspace:*",
-  "@blocks/runtime": "workspace:*"
+    "@blocks/core": "workspace:*",
+    "@blocks/runtime": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5.4.0",
