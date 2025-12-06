@@ -1,4 +1,4 @@
-import type { BlockTree, Block } from "@blocks/core";
+import type { BlockTree, Block } from "@blocks-ecosystem/core";
 import type { BlockDelta } from "./index";
 
 export function markdownToBlockTree(id: string, markdown: string): BlockTree {

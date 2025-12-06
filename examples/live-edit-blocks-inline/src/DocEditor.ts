@@ -1,4 +1,4 @@
-import type { Block } from "@blocks/core";
+import type { Block } from "@blocks-ecosystem/core";
 import type { EditorAdapter } from "./EditorAdapter";
 import { findRegistryDefByElement } from "./blockRegistry";
 

@@ -19,11 +19,42 @@ export class BlocksRuntime {
      * according to the delta semantics.
      */
     applyDeltas(deltas) {
-        // Minimal implementation: support a single "update root" delta where block
-        // is an entire BlockTree.
         for (const delta of deltas) {
+            // Whole-tree replacement
             if (delta.kind === "update" && delta.path === "root" && delta.block) {
                 this.tree = delta.block;
+                continue;
+            }
+            if (delta.kind === "update" && delta.blockId && delta.block) {
+                // Generic per-block property merge: for any update with a blockId+block,
+                // merge the provided partial block payload into the block's properties.
+                this.tree = {
+                    ...this.tree,
+                    blocks: this.tree.blocks.map((b) => b.id === delta.blockId
+                        ? {
+                            ...b,
+                            properties: {
+                                ...b.properties,
+                                ...delta.block
+                            }
+                        }
+                        : b)
+                };
+                continue;
+            }
+            if (delta.kind === "remove" && delta.blockId) {
+                this.tree = {
+                    ...this.tree,
+                    blocks: this.tree.blocks.filter((b) => b.id !== delta.blockId)
+                };
+                continue;
+            }
+            if (delta.kind === "insert" && delta.block) {
+                this.tree = {
+                    ...this.tree,
+                    blocks: [...this.tree.blocks, delta.block]
+                };
+                continue;
             }
         }
         for (const adapter of this.adapters) {

@@ -1,4 +1,4 @@
-import type { BlockTree, CanvasBlock, NodeBlock, EdgeBlock } from "../../core/src";
+import type { BlockTree, CanvasBlock, NodeBlock, EdgeBlock } from "@blocks-ecosystem/core";
 import type { NodeMoveDetail } from "./blocks-node";
 import { registerBlocksNode, BlocksNodeElement } from "./blocks-node";
 

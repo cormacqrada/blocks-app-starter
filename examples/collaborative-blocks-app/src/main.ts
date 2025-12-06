@@ -1,6 +1,6 @@
-import { registerBlocksRenderer, BlocksRendererElement } from "../../../packages/renderer/src";
-import { BlocksRuntime } from "../../../packages/runtime/src";
-import type { BlockTree, BlockDelta } from "../../../packages/runtime/src";
+import { registerBlocksRenderer, BlocksRendererElement } from "@blocks-ecosystem/renderer/blocks-renderer";
+import { BlocksRuntime, type BlockDelta } from "@blocks-ecosystem/runtime";
+import type { BlockTree } from "@blocks-ecosystem/core";
 
 registerBlocksRenderer();
 

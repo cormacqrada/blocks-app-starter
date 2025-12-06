@@ -1,5 +1,5 @@
-import type { BlockTree } from "@blocks/core";
-import type { TypeScaleBlock, TokenCollection, TokenCollectionItem } from "@blocks/core";
+import type { BlockTree } from "@blocks-ecosystem/core";
+import type { TypeScaleBlock, TokenCollection, TokenCollectionItem } from "@blocks-ecosystem/core";
 
 function resolveRatio(ratio: TypeScaleBlock["properties"]["ratio"]): number {
   if (typeof ratio === "number") return ratio;

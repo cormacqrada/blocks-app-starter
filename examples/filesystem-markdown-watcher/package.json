@@ -8,9 +8,9 @@
     "watch": "node src/server.mjs"
   },
   "dependencies": {
-    "@blocks/core": "workspace:*",
-    "@blocks/runtime": "workspace:*",
-    "@blocks/renderer": "workspace:*"
+    "@blocks-ecosystem/core": "workspace:*",
+    "@blocks-ecosystem/runtime": "workspace:*",
+    "@blocks-ecosystem/renderer": "workspace:*"
   },
   "devDependencies": {
     "vite": "^5.0.0",

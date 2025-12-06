@@ -1,4 +1,4 @@
-import type { BlockTree } from "@blocks/core";
+import type { BlockTree } from "@blocks-ecosystem/core";
 import { EditorAdapter } from "./EditorAdapter";
 import { DocEditor } from "./DocEditor";
 import { BlockPicker } from "./BlockPicker";

@@ -1,4 +1,4 @@
-import type { BlockTree } from "../../core/src";
+import type { BlockTree } from "@blocks-ecosystem/core";
 type BlockDelta = {
     kind: "insert" | "update" | "remove";
     blockId?: string;

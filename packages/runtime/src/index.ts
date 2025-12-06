@@ -1,4 +1,4 @@
-import type { BlockTree, Block } from "@blocks/core";
+import type { BlockTree, Block } from "@blocks-ecosystem/core";
 
 export interface ExecutableDocument {
   id: string;

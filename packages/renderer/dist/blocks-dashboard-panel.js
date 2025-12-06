@@ -46,7 +46,8 @@ export class BlocksDashboardPanelElement extends HTMLElement {
         header.appendChild(handle);
         const body = document.createElement("div");
         body.className = "blocks-dashboard-panel-body";
-        const contentId = this.panel?.inputs?.[0]?.id ?? "(none)";
+        const firstInput = this.panel?.inputs?.[0];
+        const contentId = firstInput?.id ?? "(none)";
         body.textContent = `Content block: ${contentId}`;
         const resize = document.createElement("div");
         resize.className = "blocks-dashboard-panel-resize";

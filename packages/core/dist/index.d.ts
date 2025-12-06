@@ -161,4 +161,67 @@ export interface TypeScaleBlock extends Block {
         collectionName: string;
     } & Record<string, unknown>;
 }
+/**
+ * DagToUiBlock is a logic block that, when "executed", reads a canvas + node
+ * graph and produces a view-oriented BlockTree (e.g. headings, paragraphs)
+ * suitable for feeding into a renderer. For now, execution is implemented in
+ * example code, but the type lives in core so it can be reused.
+ */
+export interface DagToUiBlock extends Block {
+    type: "logic";
+    properties: {
+        element: "dagToUi";
+        /** canvas whose nodes define the DAG for this UI */
+        canvasId: string;
+    } & Record<string, unknown>;
+}
+/**
+ * Modern HTML-native design system controls. These are semantic controls that
+ * the renderer can map to stylable custom elements (e.g. <blocks-select>,
+ * <blocks-range>, <blocks-switch>) while keeping the core model HTML-flavored.
+ */
+export interface SelectOptionDefinition {
+    label: string;
+    value: string;
+    [key: string]: unknown;
+}
+export interface SelectBlock extends Block {
+    type: "visual";
+    properties: {
+        /** semantic control kind */
+        element: "select";
+        /** form field name */
+        name?: string;
+        /** label text */
+        text?: string;
+        /** available options */
+        options?: SelectOptionDefinition[];
+    } & Record<string, unknown>;
+}
+export interface RangeBlock extends Block {
+    type: "visual";
+    properties: {
+        element: "range";
+        name?: string;
+        /** label text */
+        text?: string;
+        /** inclusive minimum value */
+        min?: number;
+        /** inclusive maximum value */
+        max?: number;
+        /** current value */
+        value?: number;
+    } & Record<string, unknown>;
+}
+export interface SwitchBlock extends Block {
+    type: "visual";
+    properties: {
+        element: "switch";
+        name?: string;
+        /** label text */
+        text?: string;
+        /** current state, when present */
+        checked?: boolean;
+    } & Record<string, unknown>;
+}
 //# sourceMappingURL=index.d.ts.map

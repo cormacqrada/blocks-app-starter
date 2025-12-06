@@ -1,5 +1,5 @@
-import { deserializeFromMarkdown, executeBlockTree, markdownToBlockTree, type ExecutableDocument } from "@blocks/runtime";
-import type { BlockTree, Block, ApplyTokenCollectionBlock, TokenCollection, ThemeBlock } from "@blocks/core";
+import { deserializeFromMarkdown, executeBlockTree, markdownToBlockTree, type ExecutableDocument } from "@blocks-ecosystem/runtime";
+import type { BlockTree, Block, ApplyTokenCollectionBlock, TokenCollection, ThemeBlock } from "@blocks-ecosystem/core";
 import { marked } from "marked";
 
 /**
@@ -89,7 +89,9 @@ export class BlocksRendererElement extends HTMLElement {
 }
 
 function findApplyTokenCollectionBlock(tree: BlockTree): ApplyTokenCollectionBlock | null {
-  return (tree.blocks.find((b) => (b as any).properties?.element === "applyTokenCollection") as ApplyTokenCollectionBlock) ?? null;
+  return (
+    tree.blocks.find((b: Block) => (b as any).properties?.element === "applyTokenCollection") as ApplyTokenCollectionBlock
+  ) ?? null;
 }
 
 function applyThemeFromTree(tree: BlockTree, shadow: ShadowRoot): void {
@@ -101,7 +103,7 @@ function applyThemeFromTree(tree: BlockTree, shadow: ShadowRoot): void {
   const outputType: string | undefined = props.outputType;
   if (!collectionName || outputType !== "cssVariables") return;
 
-  const collection = tree.collections.find((c) => c.name === collectionName) as TokenCollection | undefined;
+  const collection = tree.collections.find((c: TokenCollection) => c.name === collectionName) as TokenCollection | undefined;
   if (!collection) return;
 
   const items = (collection.items as any[]) ?? [];
@@ -123,7 +125,7 @@ function applyThemeFromTree(tree: BlockTree, shadow: ShadowRoot): void {
 }
 
 export function renderVisualLayout(tree: BlockTree): HTMLElement | null {
-  const visualBlocks = tree.blocks.filter((b) => b.type === "visual");
+  const visualBlocks = tree.blocks.filter((b: Block) => b.type === "visual");
   if (visualBlocks.length === 0) return null;
 
   const section = document.createElement("section");

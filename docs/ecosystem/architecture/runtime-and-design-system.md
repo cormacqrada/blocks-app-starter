@@ -14,7 +14,7 @@ The runtime is the **operating system** for blocks:
 - Is the only authority on current block state.
 
 ```ts
-import { BlocksRuntime, type BlockTree, type BlockDelta } from "@blocks/runtime";
+import { BlocksRuntime, type BlockTree, type BlockDelta } from "@blocks-ecosystem/runtime";
 
 const initialTree: BlockTree = { id: "doc", blocks: [], collections: [] };
 const runtime = new BlocksRuntime(initialTree);

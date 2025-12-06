@@ -1,6 +1,6 @@
-import type { Block, BlockTree, CanvasBlock, NodeBlock, NodePortDefinition } from "@blocks/core/src";
-import { BlocksRuntime, type BlockDelta } from "@blocks/runtime/src";
-import { registerBlocksCanvas } from "@blocks/renderer/src/blocks-canvas";
+import type { Block, BlockTree, CanvasBlock, NodeBlock, NodePortDefinition } from "@blocks-ecosystem/core";
+import { BlocksRuntime, type BlockDelta } from "@blocks-ecosystem/runtime";
+import { registerBlocksCanvas } from "@blocks-ecosystem/renderer/blocks-canvas";
 
 registerBlocksCanvas();
 

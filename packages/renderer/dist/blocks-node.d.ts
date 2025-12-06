@@ -1,4 +1,4 @@
-import type { NodeBlock } from "../../core/src";
+import type { NodeBlock } from "@blocks-ecosystem/core";
 type BlockDelta = {
     kind: "insert" | "update" | "remove";
     blockId?: string;

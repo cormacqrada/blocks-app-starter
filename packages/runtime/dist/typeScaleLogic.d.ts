@@ -1,4 +1,4 @@
-import type { BlockTree } from "@blocks/core";
+import type { BlockTree } from "@blocks-ecosystem/core";
 /**
  * Apply all TypeScaleBlock logic blocks to produce TokenCollections with
  * typography scale tokens.

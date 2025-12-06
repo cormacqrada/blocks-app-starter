@@ -373,6 +373,9 @@ function ensureCanvasStyles(shadow) {
   position: relative;
   width: 100%;
   height: 100%;
+  /* Ensure the viewport is visible even if the host has not been given an
+     explicit height. This works together with the host min-height. */
+  min-height: 320px;
   cursor: grab;
   user-select: none;
 }

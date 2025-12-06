@@ -1,5 +1,5 @@
-import type { Block, BlockTree, Collection, TokenCollection } from "@blocks/core";
-import { registerBlocksRenderer } from "@blocks/renderer/blocks-renderer";
+import type { Block, BlockTree, Collection, TokenCollection } from "@blocks-ecosystem/core";
+import { registerBlocksRenderer } from "@blocks-ecosystem/renderer/blocks-renderer";
 
 registerBlocksRenderer();
 

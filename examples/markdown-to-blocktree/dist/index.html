@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Blocks API Example – Web App</title>
+    <script type="module" crossorigin src="/assets/index-CdWD0p6L.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Blocks Markdown Demo</h1>
+
+      <div style="display: flex; gap: 1rem; align-items: flex-start;">
+        <textarea id="editor" rows="18" style="width: 50%;">
+# API Example – Live (from Markdown)
+
+This **paragraph** is rendered from raw Markdown with `inline code`.
+
+```ts
+console.log('Hello from Markdown');
+```
+
+> This is a blockquote from Markdown.
+        </textarea>
+
+        <div style="width: 50%; max-width: 50%;">
+          <blocks-renderer id="preview" debug="true"></blocks-renderer>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

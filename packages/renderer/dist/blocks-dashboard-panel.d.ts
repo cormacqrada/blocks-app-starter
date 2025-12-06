@@ -1,4 +1,4 @@
-import type { DashboardPanelBlock } from "../../core/src";
+import type { DashboardPanelBlock } from "@blocks-ecosystem/core";
 type BlockDelta = {
     kind: "insert" | "update" | "remove";
     blockId?: string;

@@ -1,5 +1,5 @@
 {
-  "name": "@blocks/renderer",
+  "name": "@blocks-ecosystem/renderer",
   "version": "0.2.0",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
@@ -11,8 +11,8 @@
     "lint": "echo 'no lint yet'"
   },
   "dependencies": {
-    "@blocks/core": "workspace:*",
-    "@blocks/runtime": "workspace:*",
+    "@blocks-ecosystem/core": "workspace:*",
+    "@blocks-ecosystem/runtime": "workspace:*",
     "marked": "^12.0.0"
   }
 }

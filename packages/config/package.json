@@ -1,5 +1,5 @@
 {
-  "name": "@blocks/config",
+  "name": "@blocks-ecosystem/config",
   "version": "0.2.0",
   "main": "eslint/index.cjs",
   "scripts": {

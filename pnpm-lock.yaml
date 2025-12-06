@@ -5,9 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@blocks/core': workspace:*
-  '@blocks/runtime': workspace:*
-  '@blocks/renderer': workspace:*
+  '@blocks-ecosystem/core': workspace:*
+  '@blocks-ecosystem/runtime': workspace:*
+  '@blocks-ecosystem/renderer': workspace:*
 
 importers:
 
@@ -40,13 +40,13 @@ importers:
 
   examples/canvas-layout:
     dependencies:
-      '@blocks/core':
+      '@blocks-ecosystem/core':
         specifier: workspace:*
         version: link:../../packages/core
-      '@blocks/renderer':
+      '@blocks-ecosystem/renderer':
         specifier: workspace:*
         version: link:../../packages/renderer
-      '@blocks/runtime':
+      '@blocks-ecosystem/runtime':
         specifier: workspace:*
         version: link:../../packages/runtime
     devDependencies:
@@ -55,17 +55,17 @@ importers:
         version: 5.9.3
       vite:
         specifier: ^5.0.0
-        version: 5.4.21(@types/node@24.10.1)
+        version: 5.4.21(@types/node@22.19.1)
 
   examples/collaborative-blocks-app:
     dependencies:
-      '@blocks/core':
+      '@blocks-ecosystem/core':
         specifier: workspace:*
         version: link:../../packages/core
-      '@blocks/renderer':
+      '@blocks-ecosystem/renderer':
         specifier: workspace:*
         version: link:../../packages/renderer
-      '@blocks/runtime':
+      '@blocks-ecosystem/runtime':
         specifier: workspace:*
         version: link:../../packages/runtime
     devDependencies:
@@ -74,17 +74,17 @@ importers:
         version: 5.9.3
       vite:
         specifier: ^5.0.0
-        version: 5.4.21(@types/node@24.10.1)
+        version: 5.4.21(@types/node@22.19.1)
 
   examples/dashboard-layout:
     dependencies:
-      '@blocks/core':
+      '@blocks-ecosystem/core':
         specifier: workspace:*
         version: link:../../packages/core
-      '@blocks/renderer':
+      '@blocks-ecosystem/renderer':
         specifier: workspace:*
         version: link:../../packages/renderer
-      '@blocks/runtime':
+      '@blocks-ecosystem/runtime':
         specifier: workspace:*
         version: link:../../packages/runtime
     devDependencies:
@@ -93,17 +93,17 @@ importers:
         version: 5.9.3
       vite:
         specifier: ^5.0.0
-        version: 5.4.21(@types/node@24.10.1)
+        version: 5.4.21(@types/node@22.19.1)
 
   examples/filesystem-markdown-watcher:
     dependencies:
-      '@blocks/core':
+      '@blocks-ecosystem/core':
         specifier: workspace:*
         version: link:../../packages/core
-      '@blocks/renderer':
+      '@blocks-ecosystem/renderer':
         specifier: workspace:*
         version: link:../../packages/renderer
-      '@blocks/runtime':
+      '@blocks-ecosystem/runtime':
         specifier: workspace:*
         version: link:../../packages/runtime
     devDependencies:
@@ -112,20 +112,20 @@ importers:
         version: 5.9.3
       vite:
         specifier: ^5.0.0
-        version: 5.4.21(@types/node@24.10.1)
+        version: 5.4.21(@types/node@22.19.1)
       ws:
         specifier: ^8.18.0
         version: 8.18.3
 
   examples/live-edit-blocks-dag:
     dependencies:
-      '@blocks/core':
+      '@blocks-ecosystem/core':
         specifier: workspace:*
         version: link:../../packages/core
-      '@blocks/renderer':
+      '@blocks-ecosystem/renderer':
         specifier: workspace:*
         version: link:../../packages/renderer
-      '@blocks/runtime':
+      '@blocks-ecosystem/runtime':
         specifier: workspace:*
         version: link:../../packages/runtime
     devDependencies:
@@ -134,17 +134,17 @@ importers:
         version: 5.9.3
       vite:
         specifier: ^5.0.0
-        version: 5.4.21(@types/node@24.10.1)
+        version: 5.4.21(@types/node@22.19.1)
 
   examples/live-edit-blocks-design-tokens:
     dependencies:
-      '@blocks/core':
+      '@blocks-ecosystem/core':
         specifier: workspace:*
         version: link:../../packages/core
-      '@blocks/renderer':
+      '@blocks-ecosystem/renderer':
         specifier: workspace:*
         version: link:../../packages/renderer
-      '@blocks/runtime':
+      '@blocks-ecosystem/runtime':
         specifier: workspace:*
         version: link:../../packages/runtime
     devDependencies:
@@ -153,14 +153,14 @@ importers:
         version: 5.9.3
       vite:
         specifier: ^5.0.0
-        version: 5.4.21(@types/node@24.10.1)
+        version: 5.4.21(@types/node@22.19.1)
 
   examples/live-edit-blocks-inline:
     dependencies:
-      '@blocks/core':
+      '@blocks-ecosystem/core':
         specifier: workspace:*
         version: link:../../packages/core
-      '@blocks/runtime':
+      '@blocks-ecosystem/runtime':
         specifier: workspace:*
         version: link:../../packages/runtime
     devDependencies:
@@ -169,17 +169,17 @@ importers:
         version: 5.9.3
       vite:
         specifier: ^5.0.0
-        version: 5.4.21(@types/node@24.10.1)
+        version: 5.4.21(@types/node@22.19.1)
 
   examples/markdown-to-blocktree:
     dependencies:
-      '@blocks/core':
+      '@blocks-ecosystem/core':
         specifier: workspace:*
         version: link:../../packages/core
-      '@blocks/renderer':
+      '@blocks-ecosystem/renderer':
         specifier: workspace:*
         version: link:../../packages/renderer
-      '@blocks/runtime':
+      '@blocks-ecosystem/runtime':
         specifier: workspace:*
         version: link:../../packages/runtime
     devDependencies:
@@ -188,13 +188,17 @@ importers:
         version: 5.9.3
       vite:
         specifier: ^5.0.0
-        version: 5.4.21(@types/node@24.10.1)
+        version: 5.4.21(@types/node@22.19.1)
 
   packages/cli:
     dependencies:
       commander:
         specifier: ^12.0.0
         version: 12.1.0
+    devDependencies:
+      '@types/node':
+        specifier: ^22.0.0
+        version: 22.19.1
 
   packages/config: {}
 
@@ -202,10 +206,10 @@ importers:
 
   packages/renderer:
     dependencies:
-      '@blocks/core':
+      '@blocks-ecosystem/core':
         specifier: workspace:*
         version: link:../core
-      '@blocks/runtime':
+      '@blocks-ecosystem/runtime':
         specifier: workspace:*
         version: link:../runtime
       marked:
@@ -214,7 +218,7 @@ importers:
 
   packages/runtime:
     dependencies:
-      '@blocks/core':
+      '@blocks-ecosystem/core':
         specifier: workspace:*
         version: link:../core
 
@@ -647,6 +651,9 @@ packages:
 
   '@types/node@12.20.55':
     resolution: {integrity: sha512-J8xLz7q2OFulZ2cyGTLE1TbbZcjpno7FaN6zdJNrgAdrJ+DZzh/uFR6YrTb4C+nXakvud8Q4+rbhoIWlYQbUFQ==}
+
+  '@types/node@22.19.1':
+    resolution: {integrity: sha512-LCCV0HdSZZZb34qifBsyWlUmok6W7ouER+oQIGBScS8EsZsQbrtFTUrDX4hOl+CS6p7cnNC4td+qrSVGSCTUfQ==}
 
   '@types/node@24.10.1':
     resolution: {integrity: sha512-GNWcUTRBgIRJD5zj+Tq0fKOJ5XZajIiBroOF0yvj2bSU1WvNdYS/dn9UxwsujGW4JX06dnHyjV2y9rRaybH0iQ==}
@@ -1271,6 +1278,9 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
+  undici-types@6.21.0:
+    resolution: {integrity: sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==}
+
   undici-types@7.16.0:
     resolution: {integrity: sha512-Zz+aZWSj8LE6zoxD+xrjh4VfkIG8Ya6LvYkZqtUQGJPZjYl53ypCaUwWqo7eI0x66KBGeRo+mlBEkMSeSZ38Nw==}
 
@@ -1809,11 +1819,15 @@ snapshots:
 
   '@types/conventional-commits-parser@5.0.2':
     dependencies:
-      '@types/node': 24.10.1
+      '@types/node': 22.19.1
 
   '@types/estree@1.0.8': {}
 
   '@types/node@12.20.55': {}
+
+  '@types/node@22.19.1':
+    dependencies:
+      undici-types: 6.21.0
 
   '@types/node@24.10.1':
     dependencies:
@@ -2368,19 +2382,21 @@ snapshots:
 
   typescript@5.9.3: {}
 
+  undici-types@6.21.0: {}
+
   undici-types@7.16.0: {}
 
   unicorn-magic@0.1.0: {}
 
   universalify@0.1.2: {}
 
-  vite@5.4.21(@types/node@24.10.1):
+  vite@5.4.21(@types/node@22.19.1):
     dependencies:
       esbuild: 0.21.5
       postcss: 8.5.6
       rollup: 4.53.3
     optionalDependencies:
-      '@types/node': 24.10.1
+      '@types/node': 22.19.1
       fsevents: 2.3.3
 
   webidl-conversions@3.0.1: {}

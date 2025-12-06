@@ -1,7 +1,7 @@
 {
   "name": "blocks-app-starter",
   "version": "0.1.0",
-  "private": false,
+  "private": true,
   "description": "Starter for repos for  apps in the blocks ecosystem.",
   "packageManager": "pnpm@9.0.0",
   "workspaces": ["packages/*", "examples/*"],
@@ -26,9 +26,9 @@
   },
   "pnpm": {
     "overrides": {
-      "@blocks/core": "workspace:*",
-      "@blocks/runtime": "workspace:*",
-      "@blocks/renderer": "workspace:*"
+      "@blocks-ecosystem/core": "workspace:*",
+      "@blocks-ecosystem/runtime": "workspace:*",
+      "@blocks-ecosystem/renderer": "workspace:*"
     }
   }
 }

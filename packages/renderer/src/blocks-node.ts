@@ -1,4 +1,4 @@
-import type { NodeBlock, NodePortDefinition } from "../../core/src";
+import type { NodeBlock, NodePortDefinition } from "@blocks-ecosystem/core";
 
 type BlockDelta = {
   kind: "insert" | "update" | "remove";

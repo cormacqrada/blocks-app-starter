@@ -1,4 +1,4 @@
-import type { BlockTree } from "@blocks/core";
+import type { BlockTree, Block } from "@blocks-ecosystem/core";
 /**
  * <blocks-renderer>
  *
@@ -22,5 +22,7 @@ export declare class BlocksRendererElement extends HTMLElement {
     setTree(tree: BlockTree): void;
     private render;
 }
+export declare function renderVisualLayout(tree: BlockTree): HTMLElement | null;
+export declare function renderVisualBlock(block: Block): HTMLElement;
 export declare function registerBlocksRenderer(tagName?: string): void;
 //# sourceMappingURL=blocks-renderer.d.ts.map

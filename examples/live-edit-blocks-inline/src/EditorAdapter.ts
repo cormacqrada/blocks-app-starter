@@ -1,5 +1,5 @@
-import type { Block, BlockTree } from "@blocks/core";
-import { BlocksRuntime, type BlockDelta } from "@blocks/runtime";
+import type { Block, BlockTree } from "@blocks-ecosystem/core";
+import { BlocksRuntime, type BlockDelta } from "@blocks-ecosystem/runtime";
 import { BLOCK_REGISTRY, createBlockFromRegistry, type RegistryBlockDefinition } from "./blockRegistry";
 
 export interface CursorState {

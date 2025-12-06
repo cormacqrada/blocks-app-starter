@@ -1,5 +1,5 @@
 {
-  "name": "@blocks/core",
+  "name": "@blocks-ecosystem/core",
   "version": "0.2.0",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",

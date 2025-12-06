@@ -1,4 +1,4 @@
-import type { DashboardPanelBlock } from "../../core/src";
+import type { DashboardPanelBlock } from "@blocks-ecosystem/core";
 
 type BlockDelta = {
   kind: "insert" | "update" | "remove";
@@ -86,7 +86,8 @@ export class BlocksDashboardPanelElement extends HTMLElement {
 
     const body = document.createElement("div");
     body.className = "blocks-dashboard-panel-body";
-    const contentId = (this.panel?.inputs?.[0]?.id as string | undefined) ?? "(none)";
+    const firstInput = this.panel?.inputs?.[0] as { id?: string } | undefined;
+    const contentId = (firstInput?.id as string | undefined) ?? "(none)";
     body.textContent = `Content block: ${contentId}`;
 
     const resize = document.createElement("div");

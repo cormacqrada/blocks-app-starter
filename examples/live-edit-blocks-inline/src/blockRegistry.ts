@@ -1,4 +1,4 @@
-import type { Block } from "@blocks/core";
+import type { Block } from "@blocks-ecosystem/core";
 
 export type BlockPropType = "string" | "number" | "enum";
 

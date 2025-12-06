@@ -1,6 +1,6 @@
-import type { Block, BlockTree, DashboardBlock, DashboardPanelBlock } from "@blocks/core/src";
-import { BlocksRuntime, type BlockDelta } from "../../../packages/runtime/src";
-import { registerBlocksDashboard } from "@blocks/renderer/src/blocks-dashboard";
+import type { Block, BlockTree, DashboardBlock, DashboardPanelBlock } from "@blocks-ecosystem/core";
+import { BlocksRuntime, type BlockDelta } from "@blocks-ecosystem/runtime";
+import { registerBlocksDashboard } from "@blocks-ecosystem/renderer/blocks-dashboard";
 
 registerBlocksDashboard();
 

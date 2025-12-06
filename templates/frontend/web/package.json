@@ -6,8 +6,8 @@
     "start": "echo 'wire up dev server here'"
   },
   "dependencies": {
-    "@blocks/core": "^0.1.0",
-    "@blocks/runtime": "^0.1.0",
+    "@blocks-ecosystem/core": "^0.1.0",
+    "@blocks-ecosystem/runtime": "^0.1.0",
     "@capacitor/core": "^6.0.0"
   }
 }

@@ -12,8 +12,8 @@
     "typescript": "^5.6.0"
   },
   "dependencies": {
-    "@blocks/core": "workspace:*",
-    "@blocks/runtime": "workspace:*",
-    "@blocks/renderer": "workspace:*"
+    "@blocks-ecosystem/core": "workspace:*",
+    "@blocks-ecosystem/runtime": "workspace:*",
+    "@blocks-ecosystem/renderer": "workspace:*"
   }
 }

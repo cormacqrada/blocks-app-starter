@@ -8,9 +8,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@blocks/core": "workspace:*",
-    "@blocks/runtime": "workspace:*",
-    "@blocks/renderer": "workspace:*"
+    "@blocks-ecosystem/core": "workspace:*",
+    "@blocks-ecosystem/runtime": "workspace:*",
+    "@blocks-ecosystem/renderer": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5.0.0",

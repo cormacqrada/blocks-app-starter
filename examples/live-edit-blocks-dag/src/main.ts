@@ -1,7 +1,7 @@
-import type { Block, BlockTree, CanvasBlock, NodeBlock, EdgeBlock, NodePortDefinition, DagToUiBlock } from "@blocks/core/src";
-import { BlocksRuntime, type BlockDelta } from "@blocks/runtime/src";
-import { registerBlocksCanvas } from "@blocks/renderer/src/blocks-canvas";
-import { BlocksRendererElement } from "@blocks/renderer/src/blocks-renderer";
+import type { Block, BlockTree, CanvasBlock, NodeBlock, EdgeBlock, NodePortDefinition, DagToUiBlock } from "@blocks-ecosystem/core";
+import { BlocksRuntime, type BlockDelta } from "@blocks-ecosystem/runtime";
+import { registerBlocksCanvas } from "@blocks-ecosystem/renderer/blocks-canvas";
+import { BlocksRendererElement } from "@blocks-ecosystem/renderer/blocks-renderer";
 
 registerBlocksCanvas();
 customElements.define("blocks-renderer", BlocksRendererElement);

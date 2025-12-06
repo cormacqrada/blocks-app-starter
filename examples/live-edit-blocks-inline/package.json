@@ -8,8 +8,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@blocks/core": "workspace:*",
-    "@blocks/runtime": "workspace:*"
+    "@blocks-ecosystem/core": "workspace:*",
+    "@blocks-ecosystem/runtime": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5.4.0",

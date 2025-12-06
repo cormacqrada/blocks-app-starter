@@ -1,4 +1,4 @@
-import type { BlockTree, DashboardBlock, DashboardPanelBlock } from "../../core/src";
+import type { BlockTree, DashboardBlock, DashboardPanelBlock } from "@blocks-ecosystem/core";
 import type {
   BlocksDashboardPanelElement,
   DashboardPanelMoveDetail,

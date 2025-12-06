@@ -1,5 +1,5 @@
 {
-  "name": "@blocks/cli",
+  "name": "@blocks-ecosystem/cli",
   "version": "0.2.0",
   "bin": {
     "blocks-app": "dist/index.cjs"
@@ -13,5 +13,8 @@
   },
   "dependencies": {
     "commander": "^12.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0"
   }
 }

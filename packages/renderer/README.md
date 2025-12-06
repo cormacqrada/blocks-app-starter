@@ -1,4 +1,4 @@
-# @blocks/renderer
+# @blocks-ecosystem/renderer
 
 Web Components runtime for Blocks documents.
 
@@ -12,7 +12,7 @@ Web Components runtime for Blocks documents.
 Register the component in your web app:
 
 ```ts
-import { registerBlocksRenderer } from "@blocks/renderer";
+import { registerBlocksRenderer } from "@blocks-ecosystem/renderer";
 
 registerBlocksRenderer();
 ```

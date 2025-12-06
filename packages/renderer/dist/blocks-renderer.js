@@ -1,4 +1,4 @@
-import { deserializeFromMarkdown, executeBlockTree, markdownToBlockTree } from "@blocks/runtime";
+import { deserializeFromMarkdown, executeBlockTree, markdownToBlockTree } from "@blocks-ecosystem/runtime";
 import { marked } from "marked";
 /**
  * <blocks-renderer>
@@ -58,8 +58,8 @@ export class BlocksRendererElement extends HTMLElement {
         shadow.innerHTML = "";
         ensureStyles(shadow);
         applyThemeFromTree(tree, shadow);
-        // Blocks graph rendering as Markdown elements (heading, paragraph, code, blockquote, ...)
-        const layout = renderMarkdownLayout(executedTree);
+        // Blocks graph rendering as visual elements (heading, paragraph, code, blockquote, ...)
+        const layout = renderVisualLayout(executedTree);
         if (layout) {
             shadow.appendChild(layout);
         }
@@ -103,22 +103,33 @@ function applyThemeFromTree(tree, shadow) {
         host.style.setProperty(cssVar, value);
     }
 }
-function renderMarkdownLayout(tree) {
+export function renderVisualLayout(tree) {
     const visualBlocks = tree.blocks.filter((b) => b.type === "visual");
     if (visualBlocks.length === 0)
         return null;
     const section = document.createElement("section");
     section.className = "blocks-renderer-markdown-layout";
     for (const block of visualBlocks) {
-        section.appendChild(renderMarkdownBlock(block));
+        section.appendChild(renderVisualBlock(block));
     }
     return section;
 }
-function renderMarkdownBlock(block) {
+export function renderVisualBlock(block) {
     const kind = String(block.properties["element"] ?? "paragraph");
     const text = String(block.properties["text"] ?? "");
     const level = Number(block.properties["level"] ?? 1);
     const language = String(block.properties["language"] ?? "");
+    const name = String(block.properties.name ?? "");
+    const options = block.properties.options ?? [];
+    const min = typeof block.properties.min === "number" ? block.properties.min : Number(block.properties.min ?? 0);
+    const max = typeof block.properties.max === "number" ? block.properties.max : Number(block.properties.max ?? 100);
+    const value = typeof block.properties.value === "number"
+        ? block.properties.value
+        : Number(block.properties.value ?? min);
+    const inputType = String(block.properties.inputType ?? "text");
+    const placeholder = String(block.properties.placeholder ?? "");
+    const rows = Number(block.properties.rows ?? 3);
+    const variant = String(block.properties.variant ?? "primary");
     switch (kind) {
         case "heading": {
             const clamped = Math.min(Math.max(level, 1), 6);
@@ -144,6 +155,45 @@ function renderMarkdownBlock(block) {
             const q = document.createElement("blockquote");
             q.textContent = text;
             el.appendChild(q);
+            return el;
+        }
+        case "input": {
+            const el = document.createElement("blocks-input");
+            const labelEl = document.createElement("label");
+            labelEl.className = "blocks-field-label";
+            labelEl.textContent = text || name || "Input";
+            const wrapper = document.createElement("div");
+            wrapper.className = "blocks-input-wrapper";
+            const input = document.createElement("input");
+            input.type = inputType || "text";
+            if (placeholder)
+                input.placeholder = placeholder;
+            wrapper.appendChild(input);
+            el.appendChild(labelEl);
+            el.appendChild(wrapper);
+            return el;
+        }
+        case "textarea": {
+            const el = document.createElement("blocks-textarea");
+            const labelEl = document.createElement("label");
+            labelEl.className = "blocks-field-label";
+            labelEl.textContent = text || name || "Textarea";
+            const ta = document.createElement("textarea");
+            if (placeholder)
+                ta.placeholder = placeholder;
+            if (!Number.isNaN(rows) && rows > 0)
+                ta.rows = rows;
+            el.appendChild(labelEl);
+            el.appendChild(ta);
+            return el;
+        }
+        case "button": {
+            const el = document.createElement("blocks-button");
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = `blocks-button blocks-button-${variant}`;
+            btn.textContent = text || "Button";
+            el.appendChild(btn);
             return el;
         }
         case "paragraph":
@@ -210,7 +260,8 @@ function ensureStyles(shadow) {
 }
 
 blocks-h1, blocks-h2, blocks-h3, blocks-h4, blocks-h5, blocks-h6,
-blocks-p, blocks-code, blocks-blockquote {
+blocks-p, blocks-code, blocks-blockquote,
+blocks-input, blocks-textarea, blocks-button {
   display: block;
 }
 
@@ -244,6 +295,32 @@ blocks-blockquote {
   border-left: 2px solid var(--blocks-color-bq-border);
   padding-left: 0.9rem;
   color: var(--blocks-color-muted);
+}
+
+.blocks-field-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--blocks-color-muted);
+  margin-bottom: 0.25rem;
+}
+
+.blocks-input-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--blocks-radius-md);
+  border: 1px solid rgba(31,41,55,0.9);
+  background: rgba(15,23,42,0.95);
+  padding: 0.1rem 0.45rem;
+}
+
+.blocks-input-wrapper input {
+  border: none;
+  background: transparent;
+  padding: 0.25rem 0.1rem;
+  color: var(--blocks-color-text);
+  font-size: 0.85rem;
 }
 
 blocks-p p strong {
