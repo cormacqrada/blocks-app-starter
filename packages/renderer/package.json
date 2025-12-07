@@ -1,10 +1,36 @@
 {
   "name": "@blocks-ecosystem/renderer",
   "version": "0.2.0",
-  "main": "dist/index.cjs",
-  "module": "dist/index.mjs",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "sideEffects": true,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./blocks-renderer": {
+      "types": "./dist/blocks-renderer.d.ts",
+      "default": "./dist/blocks-renderer.js"
+    },
+    "./blocks-canvas": {
+      "types": "./dist/blocks-canvas.d.ts",
+      "default": "./dist/blocks-canvas.js"
+    },
+    "./blocks-dashboard": {
+      "types": "./dist/blocks-dashboard.d.ts",
+      "default": "./dist/blocks-dashboard.js"
+    },
+    "./blocks-dashboard-panel": {
+      "types": "./dist/blocks-dashboard-panel.d.ts",
+      "default": "./dist/blocks-dashboard-panel.js"
+    },
+    "./blocks-node": {
+      "types": "./dist/blocks-node.d.ts",
+      "default": "./dist/blocks-node.js"
+    }
+  },
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "test": "echo 'no tests yet'",

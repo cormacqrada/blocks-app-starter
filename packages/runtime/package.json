@@ -1,9 +1,23 @@
 {
   "name": "@blocks-ecosystem/runtime",
   "version": "0.2.0",
-  "main": "dist/index.cjs",
-  "module": "dist/index.mjs",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./markdownAdapter": {
+      "types": "./dist/markdownAdapter.d.ts",
+      "default": "./dist/markdownAdapter.js"
+    },
+    "./typeScaleLogic": {
+      "types": "./dist/typeScaleLogic.d.ts",
+      "default": "./dist/typeScaleLogic.js"
+    }
+  },
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "test": "echo 'no tests yet'",
