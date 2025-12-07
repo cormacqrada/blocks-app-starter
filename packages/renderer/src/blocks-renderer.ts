@@ -132,13 +132,13 @@ export function renderVisualLayout(tree: BlockTree): HTMLElement | null {
   section.className = "blocks-renderer-markdown-layout";
 
   for (const block of visualBlocks) {
-    section.appendChild(renderVisualBlock(block));
+    section.appendChild(renderVisualBlock(block, tree));
   }
 
   return section;
 }
 
-export function renderVisualBlock(block: Block): HTMLElement {
+export function renderVisualBlock(block: Block, tree?: BlockTree): HTMLElement {
   const kind = String(block.properties["element"] ?? "paragraph");
   const text = String(block.properties["text"] ?? "");
   const level = Number(block.properties["level"] ?? 1);
@@ -222,6 +222,61 @@ export function renderVisualBlock(block: Block): HTMLElement {
       el.appendChild(btn);
       return el;
     }
+    case "table": {
+      const el = document.createElement("blocks-table");
+      const table = document.createElement("table");
+      table.className = "blocks-table";
+
+      const collectionName = String((block.properties as any).collectionName ?? "");
+      const explicitColumns =
+        ((block.properties as any).columns as { id: string; label?: string; field: string }[] | undefined) ?? [];
+      const limit =
+        typeof (block.properties as any).limit === "number"
+          ? (block.properties as any).limit
+          : undefined;
+
+      const collection = tree?.collections.find((c: any) => c.name === collectionName) as
+        | { name: string; items: any[] }
+        | undefined;
+      const rows = (collection?.items as any[]) ?? [];
+
+      const inferredColumns = () => {
+        const first = rows[0];
+        if (!first || typeof first !== "object") return [] as { id: string; label?: string; field: string }[];
+        return Object.keys(first).map((field) => ({ id: field, field, label: field }));
+      };
+
+      const columns = explicitColumns.length ? explicitColumns : inferredColumns();
+
+      // Header
+      const thead = document.createElement("thead");
+      const headerRow = document.createElement("tr");
+      for (const col of columns) {
+        const th = document.createElement("th");
+        th.textContent = col.label ?? col.field;
+        headerRow.appendChild(th);
+      }
+      thead.appendChild(headerRow);
+      table.appendChild(thead);
+
+      // Body
+      const tbody = document.createElement("tbody");
+      const limitedRows = typeof limit === "number" ? rows.slice(0, limit) : rows;
+      for (const row of limitedRows) {
+        const tr = document.createElement("tr");
+        for (const col of columns) {
+          const td = document.createElement("td");
+          const value = row && typeof row === "object" ? (row as any)[col.field] : undefined;
+          td.textContent = value != null ? String(value) : "";
+          tr.appendChild(td);
+        }
+        tbody.appendChild(tr);
+      }
+      table.appendChild(tbody);
+
+      el.appendChild(table);
+      return el;
+    }
     case "paragraph":
     default: {
       const el = document.createElement("blocks-p");
@@ -288,7 +343,8 @@ function ensureStyles(shadow: ShadowRoot): void {
 
 blocks-h1, blocks-h2, blocks-h3, blocks-h4, blocks-h5, blocks-h6,
 blocks-p, blocks-code, blocks-blockquote,
-blocks-input, blocks-textarea, blocks-button {
+blocks-input, blocks-textarea, blocks-button,
+blocks-table {
   display: block;
 }
 
@@ -348,6 +404,27 @@ blocks-blockquote {
   padding: 0.25rem 0.1rem;
   color: var(--blocks-color-text);
   font-size: 0.85rem;
+}
+
+.blocks-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.blocks-table thead {
+  background: rgba(15,23,42,0.9);
+}
+
+.blocks-table th,
+.blocks-table td {
+  padding: 0.35rem 0.6rem;
+  border: 1px solid rgba(30,64,175,0.6);
+  text-align: left;
+}
+
+.blocks-table tbody tr:nth-child(even) {
+  background: rgba(15,23,42,0.7);
 }
 
 blocks-p p strong {

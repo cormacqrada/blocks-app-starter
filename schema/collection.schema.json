@@ -6,6 +6,7 @@
   "type": "object",
   "properties": {
     "name": { "type": "string" },
+    "kind": { "type": "string", "enum": ["user", "system"] },
     "items": { "type": "array", "items": {} },
     "relationships": { "type": "object", "additionalProperties": {} },
     "version": { "type": "string" },

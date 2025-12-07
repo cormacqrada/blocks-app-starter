@@ -80,5 +80,23 @@ export const CORE_BLOCK_MANIFEST: BlockManifest = {
       },
       propSchema: [{ name: "text", label: "Label", type: "string" }],
     },
+    {
+      id: "@blocks-ecosystem/core/table",
+      label: "Table",
+      description: "Tabular view of a collection",
+      element: "table",
+      kind: "visual",
+      version: "1.0.0",
+      defaultProps: {
+        collectionName: "items",
+      },
+      propSchema: [
+        { name: "collectionName", label: "Collection name", type: "string" },
+      ],
+      schemaRef: {
+        module: "../../schema/blocks.schema.json",
+        id: "https://blocks.dev/schema/blocks.schema.json",
+      },
+    },
   ],
 };
