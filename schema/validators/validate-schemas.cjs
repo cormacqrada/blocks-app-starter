@@ -1,9 +1,12 @@
 #!/usr/bin/env node
 const fs = require("fs");
 const path = require("path");
-const Ajv = require("ajv");
+const Ajv2020 = require("ajv/dist/2020");
+const addFormats = require("ajv-formats");
 
-const ajv = new Ajv({ allErrors: true });
+// Use Ajv's 2020 API so $schema draft/2020-12 references resolve.
+const ajv = new Ajv2020({ allErrors: true, strict: false });
+addFormats(ajv);
 
 const schemaDir = path.join(__dirname, "..", "..");
 

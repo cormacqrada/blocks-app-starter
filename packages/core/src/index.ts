@@ -16,6 +16,8 @@ export interface Block {
 
 export interface Collection {
   name: string;
+  /** Origin of this collection: user-authored or system-generated. */
+  kind?: "user" | "system";
   items: unknown[];
   relationships: Record<string, unknown>;
   version: string;
@@ -243,5 +245,43 @@ export interface SwitchBlock extends Block {
     text?: string;
     /** current state, when present */
     checked?: boolean;
+  } & Record<string, unknown>;
+}
+
+/**
+ * TableColumnDefinition describes a single column in a tabular visual block.
+ */
+export interface TableColumnDefinition {
+  /** Stable identifier for the column (can be used for sorting, etc.). */
+  id: string;
+  /** Human-readable label shown in the header. */
+  label?: string;
+  /**
+   * Field name to read from each collection item. For now this assumes items
+   * are plain objects and field is a top-level key.
+   */
+  field: string;
+  [key: string]: unknown;
+}
+
+/**
+ * TableBlock is a visual block that renders a Collection as an HTML table.
+ *
+ * It expects a Collection in the surrounding BlockTree with a matching
+ * collectionName. Items in that collection should be plain objects; columns
+ * determine which fields are displayed.
+ */
+export interface TableBlock extends Block {
+  type: "visual";
+  properties: {
+    element: "table";
+    /** Name of the collection from BlockTree.collections to visualize. */
+    collectionName: string;
+    /** Optional explicit column configuration. If omitted, columns are
+     * inferred from the first collection item.
+     */
+    columns?: TableColumnDefinition[];
+    /** Optional maximum rows to display. */
+    limit?: number;
   } & Record<string, unknown>;
 }
