@@ -4,28 +4,35 @@ on:
   push:
     branches: [main]
 
+permissions:
+  contents: read
+  id-token: write
+
 jobs:
   publish:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      packages: write
-      pull-requests: write
 
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
-          registry-url: https://registry.npmjs.org
-      - name: Install pnpm
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
+
+      # Ensure npm is new enough for trusted publishing (OIDC)
+      - name: Update npm to latest
+        run: npm install -g npm@latest
+
+      - name: Enable pnpm via corepack
         run: corepack enable
+
       - name: Install dependencies
-        run: pnpm install
-      - name: Create release PR or publish
+        run: pnpm install --frozen-lockfile
+
+      - name: Create release PR or publish via trusted publishing
         uses: changesets/action@v1
         with:
           publish: pnpm -r publish --access public --no-git-checks
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
