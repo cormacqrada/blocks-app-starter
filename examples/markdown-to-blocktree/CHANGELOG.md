@@ -1,5 +1,14 @@
 # markdown-to-blocktree
 
+## 0.1.2
+
+### Patch Changes
+
+- Updated dependencies [[`efdc2da`](https://github.com/cormacqrada/blocks-app-starter/commit/efdc2da2d89a175f242d8684a38073a5be67ce38)]:
+  - @blocks-ecosystem/renderer@0.2.1
+  - @blocks-ecosystem/runtime@0.2.1
+  - @blocks-ecosystem/core@0.2.1
+
 ## 0.1.1
 
 ### Patch Changes
