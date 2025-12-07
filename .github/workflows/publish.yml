@@ -30,10 +30,10 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Create release PR or publish via trusted publishing
+      - name: Create release PR from changesets
         uses: changesets/action@v1
         with:
-          # Use Changesets' own publish command, which calls npm publish under the hood.
-          publish: pnpm changeset publish
+          # Disable automatic publish from CI for now; only open Version Packages PRs.
+          publish: ""
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
