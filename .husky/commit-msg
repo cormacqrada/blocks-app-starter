@@ -1,5 +1,4 @@
 #!/usr/bin/env sh
-. "$(dirname "$0")/_/husky.sh"
 
 # In CI, allow Changesets' auto "Version Packages" commit without running commitlint.
 if [ "$CI" = "true" ] && grep -q "Version Packages" "$1"; then

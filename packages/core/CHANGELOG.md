@@ -1,5 +1,11 @@
 # @blocks/core
 
+## 0.2.1
+
+### Patch Changes
+
+- [`efdc2da`](https://github.com/cormacqrada/blocks-app-starter/commit/efdc2da2d89a175f242d8684a38073a5be67ce38) Thanks [@cormacqrada](https://github.com/cormacqrada)! - fix entry points and exports for bundlers
+
 ## 0.2.0
 
 ### Minor Changes
