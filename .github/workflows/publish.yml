@@ -33,6 +33,7 @@ jobs:
       - name: Create release PR or publish via trusted publishing
         uses: changesets/action@v1
         with:
-          publish: pnpm -r publish --access public --no-git-checks
+          # Use Changesets' own publish command, which calls npm publish under the hood.
+          publish: pnpm changeset publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
